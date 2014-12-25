@@ -1,7 +1,7 @@
     //* TITLE Replace Caption **//
     //* VERSION 1.0 REV A **//
     //* DESCRIPTION Replace post caption with boilerplate text/html. **//
-    //* DEVELOPER Phil Groshens **//
+    //* DEVELOPER https://github.com/philgroshens/ **//
     //* FRAME false **//
     //* BETA false **//
 
