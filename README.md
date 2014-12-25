@@ -6,7 +6,7 @@ A work in progress extension for XKit that replaces the caption on a tumblr post
 Currently the extension pulls the replacement caption from the settings automagically.
 
 To-Do
-=====
+-----
 
 - Finish adding a "replace caption" button.
 - Moar stuff too.
