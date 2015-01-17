@@ -1,5 +1,5 @@
     //* TITLE Replace Caption **//
-    //* VERSION 1.0 REV A **//
+    //* VERSION 1.01 REV A **//
     //* DESCRIPTION Replace post caption with boilerplate text/html. **//
     //* DEVELOPER Phil Groshens **//
     //* FRAME false **//
@@ -23,8 +23,6 @@
 
         run: function () {
 
-            // This gets called by xkit_main.
-            // Time to boot up. 
             this.running = true;
             XKit.interface.post_window.create_control_button("xkit-replace-caption-window", this.button_icon, "Replace Caption!");
             XKit.interface.create_control_button("xkit-replace-caption", this.button_icon, "Replace Caption", "", this.button_ok_icon);
@@ -72,12 +70,12 @@
                         console.log("OCR ERROR --> " + e.message);
                     }
                 }
-                //var mx_sentence = XKit.tools.replace_all(m_sentence, "\\\n", "");
-                //mx_sentence = XKit.tools.replace_all(m_sentence, "\\\r", "");
+                var mx_sentence = XKit.tools.replace_all(m_sentence, "\\\n", "");
+                mx_sentence = XKit.tools.replace_all(m_sentence, "\\\r", "");
 		
-                //mx_sentence = XKit.tools.replace_all(m_sentence, "'", "");
-		//mx_sentence = XKit.tools.replace_all(m_sentence, "&#34;", "");
-                //mx_sentence = XKit.tools.replace_all(m_sentence, "\"", "&#34;");
+                mx_sentence = XKit.tools.replace_all(m_sentence, "'", "");
+		mx_sentence = XKit.tools.replace_all(m_sentence, "&#34;", "");
+                mx_sentence = XKit.tools.replace_all(m_sentence, "\"", "&#34;");
                 XKit.tools.add_function(set_post, true, m_sentence);
 
             }, 400);
@@ -107,7 +105,7 @@
 
         destroy: function () {
 
-            // We are shutting down! Better restore everything.
+      
 		XKit.post_listener.remove("replace_caption");
             this.running = false;
 
@@ -118,9 +116,6 @@
 
 	cpanel: function(m_div) {
 		
-	//if ($("#xkit-replace-caption-custom-panel").length > 0) {
-	//    $("#xkit-replace-caption-custom-panel").remove();
-	//}
     	var caption_pref = XKit.extensions.replace_caption.load_caption_prefs();
 	$(m_div).val(caption_pref);
 	 
