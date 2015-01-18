@@ -57,7 +57,7 @@
         post_window: function () {
 
 	    var origin = XKit.interface.post_window.origin();
-            if (origin.is_reblog === true) {
+            if (origin.is_reblog === true || origin.is_original === true) {
             	var m_sentence = XKit.extensions.replace_caption.load_caption_prefs();
             	$("#post_two").val(m_sentence);
             	setTimeout(function () {
